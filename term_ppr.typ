@@ -21,7 +21,7 @@ In this paper, we'll explore the *probability flux analysis (PFA)* a non invasiv
 == Model 
 To understand this approach we'll consider a model 1D bead string model. We'll consider two scenario where we have two beads are attached to heat bath with two beads attached to bath with temperature $T_1$ and $T_2$ such that $T_1 eq.not T_2$ generating a temperature gradient and hence driving it out of equilibrium. One can also analyse the same situation in equilibrium where $T_1 = T_2$.
 #figure(image("bead_string_1d.png"),caption: [Bead string model])
-The equation of motion of the above system in lagenvin dynamics system
+The equation of motion of the above system in lagenvin dynamics system @Pottier2009Nonequilibrium
 $
   m dv(x_1,t,2) = - k_1 x_1 -k_2(x_1-x_2) - gamma m dv(x_1,t)+ eta_1(t)
 $
@@ -46,7 +46,7 @@ We can numerically solve @eq:overdamped_x1 and @eq:overdamped_x2 to get the dyna
 )
 #figure(image("hist_cm.png",width:50%),caption: [Histogram of position $(x_(c m))$])
 == Probability flux analysis
-In equilibrium, systems obey detailed balance—transitions between any two microstates are equally likely in both directions, so there's no net "flow" or flux in phase space. Here is the method to calculate the probability flux in a system.\
+In equilibrium, systems obey detailed balance—transitions between any two microstates are equally likely in both directions, so there's no net "flow" or flux in phase space. Here is the method to calculate the probability flux in a system.@BattleEtAl2016BrokenDetailedBalance\
 + *Define the system state space*\ Choose relevant degrees of freedom, in our case we'll consider the position ($x_1$) and ($x_2$) of the beads.
 + *Discretize the State Space*\ Divide the continuous phase space into a coarse-grained grid (called CGPS). Each grid box is a "state bin".
 + *Collect Transitions Between States*\ Track how often the system moves from state/bin $a arrow b$ and $b arrow a$ and denote these counts as $N_(a b)$ and $N_(b a)$.
@@ -61,5 +61,7 @@ $Flux arrows are plotted from bin $a arrow b$ with a length proportional to the 
 )
 
 
-Observing the above results from simulations of a 1D bead string system one can observe closed loop fluxes in @fig:diff_T but the simulations results aren't as good as shown in 
-== Bibliography
+Observing the above results from simulations of a 1D bead string system one can observe closed loop fluxes in @fig:diff_T but the simulations results aren't as good as shown in @BattleEtAl2016BrokenDetailedBalance
+== Code 
+#link("https://github.com/ramanujraman/Term_paper_NLD.git")[#underline[Find the code for the simulations here.]]
+#bibliography("refs.bib")
